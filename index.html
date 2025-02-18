@@ -1,8 +1,36 @@
-<Button
-    android:id="@+id/outlinedButton"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Outlined button"
-    style="?attr/materialButtonOutlinedStyle"
-/>
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>زر مضيء</title>
+    <style>
+        .glowing-button {
+            background-color: #4CAF50; /* لون خلفية الزر */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 0 5px #4CAF50, 0 0 10px #4CAF50, 0 0 15px #4CAF50; /* التأثير المضيء */
+            transition: all 0.3s ease;
+        }
+
+        .glowing-button:hover {
+            box-shadow: 0 0 20px #4CAF50, 0 0 30px #4CAF50, 0 0 40px #4CAF50; /* زيادة التأثير عند المرور */
+            background-color: #45a049; /* تغيير اللون عند المرور */
+        }
+    </style>
+</head>
+<body>
+
+    <button class="glowing-button">اضغط هنا</button>
+
+</body>
+</html>
+
 </html>
