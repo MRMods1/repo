@@ -90,7 +90,7 @@
             height: 30px;
         }
 
-        /* إضافة النمط للوضع العادي */
+        /* الوضع العادي */
         body {
             background-color: #f4f4f4;
             color: #333;
@@ -193,6 +193,13 @@
 
             // إضافة رسالة ترحيب حسب الوقت
             displayGreetingMessage();
+
+            // تطبيق الوضع المحفوظ في localStorage عند تحميل الصفحة
+            const savedMode = localStorage.getItem('theme');
+            if (savedMode === 'night') {
+                document.body.classList.add('night-mode');
+                document.querySelector('.toggle-button').textContent = 'Switch to Day Mode';
+            }
         };
 
         // دالة لإظهار رسالة الترحيب حسب الوقت
@@ -216,12 +223,16 @@
         function toggleNightMode() {
             const body = document.body;
             const button = document.querySelector('.toggle-button');
+            
+            // التبديل بين الوضعين
             body.classList.toggle('night-mode');
             
-            // تغيير نص الزر بناءً على الوضع الحالي
+            // حفظ الوضع الحالي في localStorage
             if (body.classList.contains('night-mode')) {
+                localStorage.setItem('theme', 'night');
                 button.textContent = 'Switch to Day Mode';
             } else {
+                localStorage.setItem('theme', 'day');
                 button.textContent = 'Switch to Night Mode';
             }
         }
