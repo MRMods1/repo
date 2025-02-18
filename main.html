@@ -90,12 +90,42 @@
             height: 30px;
         }
 
-        /* رسالة الترحيب */
+        /* إضافة النمط للوضع العادي */
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            font-family: Arial, sans-serif;
+        }
+
+        /* الوضع الليلي */
+        body.night-mode {
+            background-color: #333;
+            color: #f4f4f4;
+        }
+
         .greeting-message {
             text-align: center;
             font-size: 24px;
             color: #fff;
             margin-top: 20px;
+        }
+
+        /* زر التبديل بين الوضعين */
+        .toggle-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #00aaff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .toggle-button:hover {
+            background-color: #0088cc;
         }
     </style>
 </head>
@@ -145,6 +175,9 @@
         </div>
     </div>
 
+    <!-- زر التبديل بين الوضعين -->
+    <button class="toggle-button" onclick="toggleNightMode()">Switch to Night Mode</button>
+
     <script>
         // التحقق من الاتصال بالإنترنت
         window.onload = function() {
@@ -177,6 +210,20 @@
             }
 
             greetingMessageElement.textContent = greetingMessage;
+        }
+
+        // دالة للتبديل بين الوضع الليلي والوضع العادي
+        function toggleNightMode() {
+            const body = document.body;
+            const button = document.querySelector('.toggle-button');
+            body.classList.toggle('night-mode');
+            
+            // تغيير نص الزر بناءً على الوضع الحالي
+            if (body.classList.contains('night-mode')) {
+                button.textContent = 'Switch to Day Mode';
+            } else {
+                button.textContent = 'Switch to Night Mode';
+            }
         }
     </script>
 </body>
