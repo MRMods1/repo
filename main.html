@@ -90,36 +90,6 @@
             height: 30px;
         }
 
-        /* زر المشاركة أسفل الصفحة */
-        .share-button-container {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
-            z-index: 100;
-        }
-
-        .share-button {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-align: center;
-            cursor: pointer;
-            transition: transform 0.3s, background-color 0.3s;
-        }
-
-        .share-button:hover {
-            transform: scale(1.1);
-            background-color: #00aaff;
-        }
-
         /* رسالة الترحيب */
         .greeting-message {
             text-align: center;
@@ -175,19 +145,6 @@
         </div>
     </div>
 
-    <!-- أزرار المشاركة أسفل الصفحة -->
-    <div class="share-button-container">
-        <div class="share-button" onclick="shareOnPlatform('facebook')">
-            <span>F</span>
-        </div>
-        <div class="share-button" onclick="shareOnPlatform('twitter')">
-            <span>T</span>
-        </div>
-        <div class="share-button" onclick="shareOnPlatform('whatsapp')">
-            <span>W</span>
-        </div>
-    </div>
-
     <script>
         // التحقق من الاتصال بالإنترنت
         window.onload = function() {
@@ -220,28 +177,6 @@
             }
 
             greetingMessageElement.textContent = greetingMessage;
-        }
-
-        // دالة لمشاركة الرابط على منصات مختلفة
-        function shareOnPlatform(platform) {
-            const url = window.location.href;
-            let shareUrl = '';
-
-            switch(platform) {
-                case 'facebook':
-                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
-                    break;
-                case 'twitter':
-                    shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}`;
-                    break;
-                case 'whatsapp':
-                    shareUrl = `https://wa.me/?text=${encodeURIComponent(url)}`;
-                    break;
-                default:
-                    return;
-            }
-
-            window.open(shareUrl, '_blank');
         }
     </script>
 </body>
