@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome Page</title>
+    <title>Welcome to MRMODS-REPO</title>
     <style>
         body, html {
             margin: 0;
@@ -13,27 +13,28 @@
             justify-content: center;
             align-items: center;
             background-color: #1a1a1a;
+            font-family: Arial, sans-serif;
         }
 
         .welcome-container {
             text-align: center;
             color: #fff;
-            font-family: Arial, sans-serif;
         }
 
-        .welcome-container h1 {
+        h1 {
             font-size: 40px;
             margin-bottom: 20px;
             animation: fadeIn 3s ease-in-out;
         }
 
-        .welcome-container p {
+        p {
             font-size: 20px;
             margin-bottom: 40px;
             animation: fadeIn 3s ease-in-out;
             animation-delay: 1s;
         }
 
+        /* تأثير الخط النصي في الصفحة */
         @keyframes fadeIn {
             0% {
                 opacity: 0;
@@ -60,19 +61,34 @@
         .button:hover {
             background-color: #ff6600;
         }
+
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            font-size: 24px;
+        }
+
     </style>
     <script>
         // الانتقال التلقائي إلى الصفحة الرئيسية بعد 5 ثواني
         setTimeout(function() {
-            window.location.href = "main.html";  // استبدل بـ "index.html" أو صفحة البداية الخاصة بك
+            window.location.href = "main.html";  // تم استبدال "index.html" بـ "main.html"
         }, 5000);
     </script>
 </head>
 <body>
+
+    <!-- عنوان الصفحة في الأعلى -->
+    <div class="header">
+        Welcome to MRMODS-REPO
+    </div>
+
     <div class="welcome-container">
-        <h1>مرحباً بك في MRMODS-REPO!</h1>
-        <p>نحن سعداء بزيارتك للموقع. سيتم نقلك إلى الصفحة الرئيسية بعد قليل.</p>
-        <a href="index.html" class="button">انتقل الآن</a>
+        <h1>Welcome to MRMODS-REPO!</h1>
+        <p>We are glad to have you here. You will be redirected to the main page shortly.</p>
+        <a href="main.html" class="button">Enter Now</a> <!-- تم استبدال الرابط إلى "main.html" -->
     </div>
 </body>
 </html>
