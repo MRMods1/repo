@@ -20,43 +20,59 @@
             <a href="installer://add/repo=https://mrmods1.github.io/repo/" class="button">Add to Installer</a>
         </div>
        
-        /* تنسيق أيقونات وسائل التواصل الاجتماعي */
-        .social-icons {
-            margin-top: 50px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .social-icons a {
-            font-size: 40px;
-            width: 50px;
-            height: 50px;
-            display: block;
-            background-size: cover;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.6); /* تأثير الإضاءة الخفيف */
-            border-radius: 50%;
-        }
-
-        /* تأثير الإضاءة عند المرور على الأيقونات */
-        .social-icons a:hover {
-            box-shadow: 0 0 20px rgba(0, 51, 102, 1), 0 0 30px rgba(0, 51, 102, 1); /* إضاءة جميلة باللون الأزرق */
-            transform: scale(1.2); /* تكبير الأيقونة قليلاً */
-        }
-
-    </style>
+        <!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أيقونات تواصل اجتماعي مع تأثير إضاءة</title>
+  <style>
+    .social-icons {
+      display: flex;
+      gap: 20px;
+    }
+    .social-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .social-icon:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0 15px #00aaff;
+    }
+    .social-icon img {
+      width: 30px;
+      height: 30px;
+    }
+  </style>
 </head>
 <body>
 
+  <div class="social-icons">
+    <!-- أيقونة إنستجرام -->
+    <a href="https://www.instagram.com" class="social-icon">
+      <img src="instagram-icon.png" alt="Instagram">
+    </a>
+    
+    <!-- أيقونة تويتر -->
+    <a href="https://www.twitter.com" class="social-icon">
+      <img src="twitter-icon.png" alt="Twitter">
+    </a>
+    
+    <!-- أيقونة يوتيوب -->
+    <a href="https://www.youtube.com" class="social-icon">
+      <img src="youtube-icon.png" alt="YouTube">
+    </a>
+  </div>
 
- <!-- أيقونات وسائل التواصل الاجتماعي -->
-    <div class="social-icons">
-        <!-- تغيير روابط الصور الخاصة بالأيقونات هنا -->
-        <a href="https://www.instagram.com" target="_blank" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png');"></a>
-        <a href="https://twitter.com" target="_blank" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/60/Twitter_Logo_as_of_2021.svg');"></a>
-        <a href="https://www.youtube.com" target="_blank" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png');"></a>
-    </div>
+</body>
+</html>
 
     </div>
 </body>
