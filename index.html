@@ -6,45 +6,56 @@
     <title>MRMODS-REPO</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <style>
-        /* تنسيق الإطار الخارجي حول الصفحة */
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #000; /* خلفية داكنة */
-            color: white;
-            font-family: Arial, sans-serif;
+        /* تنسيق الإطار المضيء حول الفريم */
+        .container {
+            border: 5px solid transparent; /* الشفافية في البداية */
+            border-radius: 20px;
+            padding: 20px;
+            margin: 20px;
+            background-clip: padding-box; /* لضمان أن الإطار يظهر حول الفريم */
+            animation: glowing-border 3s infinite linear; /* إضافة تأثير الإضاءة المتغير */
         }
 
-        .outer-frame {
-            border: 10px solid #00aaff; /* لون الإطار الأزرق */
-            padding: 20px; /* المسافة بين المحتوى والإطار */
-            margin: 20px; /* المسافة بين الإطار وحدود الصفحة */
-            box-sizing: border-box;
-            border-radius: 20px; /* تأثير الزوايا المدورة */
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.7); /* إضافة تأثير الظل حول الإطار */
+        /* تأثير الإضاءة المتغير */
+        @keyframes glowing-border {
+            0% {
+                border-color: #ff0000; /* الأحمر */
+            }
+            25% {
+                border-color: #00ff00; /* الأخضر */
+            }
+            50% {
+                border-color: #0000ff; /* الأزرق */
+            }
+            75% {
+                border-color: #ffff00; /* الأصفر */
+            }
+            100% {
+                border-color: #ff00ff; /* الوردي */
+            }
         }
 
-        /* تنسيق الأزرار (شبابية وشفافة) */
+        /* تنسيق الأزرار (شفافة مع تأثير الإضاءة) */
         .button-container .button {
             padding: 10px 20px;
             margin: 10px;
             text-decoration: none;
             border-radius: 5px;
-            background-color: transparent; /* شفافية كاملة */
+            background-color: transparent;
             color: white;
             font-size: 16px;
             font-weight: bold;
             text-align: center;
-            border: 2px solid white; /* تحديد حواف بيضاء */
+            border: 2px solid white;
             transition: box-shadow 0.3s ease, transform 0.3s ease;
         }
 
         .button-container .button:hover {
-            box-shadow: 0 0 15px 5px #00aaff; /* تأثير الإضاءة الزرقاء */
+            box-shadow: 0 0 15px 5px #00aaff; /* تأثير الإضاءة الأزرق */
             transform: scale(1.05); /* تكبير الحجم عند المرور */
         }
 
-        /* تنسيق أيقونات التواصل الاجتماعي (شفافة) */
+        /* تنسيق أيقونات التواصل الاجتماعي */
         .social-icons {
             display: flex;
             gap: 20px;
@@ -57,61 +68,58 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: transparent; /* شفافية كاملة */
-            border: 2px solid #fff; /* تحديد حواف بيضاء للأيقونات */
+            background-color: transparent;
+            border: 2px solid #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .social-icon:hover {
             transform: scale(1.1);
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0 15px #00aaff; /* تأثير الإضاءة الزرقاء */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0 15px #00aaff;
         }
 
         .social-icon img {
             width: 30px;
             height: 30px;
         }
-
     </style>
 </head>
 <body>
-    <div class="outer-frame">
-        <div class="container">
-            <div class="logo-container">
-                <img src="assets/icon.png" alt="s8xg Logo" class="logo">
-                <h1 class="title">MRMODS-REPO</h1>
-            </div>
-            <div class="button-container">
-                <a href="sileo://source/https://mrmods1.github.io/repo/" class="button">Add to Sileo</a>
-                <a href="apt-repo://https://mrmods1.github.io/repo/" class="button">Add to Saily</a>
-                <a href="cydia://url/https://cydia.saurik.com/api/share#?source=https://mrmods1.github.io/repo/" class="button">Add to Cydia</a>
-                <a href="zbra://sources/hhttps://https://mrmods1.github.io/repo/" class="button">Add to Zebra</a>
-                <a href="installer://add/repo=https://mrmods1.github.io/repo/" class="button">Add to Installer</a>
-            </div>
+    <div class="container">
+        <div class="logo-container">
+            <img src="assets/icon.png" alt="s8xg Logo" class="logo">
+            <h1 class="title">MRMODS-REPO</h1>
+        </div>
+        <div class="button-container">
+            <a href="sileo://source/https://mrmods1.github.io/repo/" class="button">Add to Sileo</a>
+            <a href="apt-repo://https://mrmods1.github.io/repo/" class="button">Add to Saily</a>
+            <a href="cydia://url/https://cydia.saurik.com/api/share#?source=https://mrmods1.github.io/repo/" class="button">Add to Cydia</a>
+            <a href="zbra://sources/hhttps://https://mrmods1.github.io/repo/" class="button">Add to Zebra</a>
+            <a href="installer://add/repo=https://mrmods1.github.io/repo/" class="button">Add to Installer</a>
+        </div>
 
-            <!-- أيقونات تواصل اجتماعي مع تأثير إضاءة -->
-            <div class="social-icons">
-                <!-- أيقونة تيليجرام -->
-                <a href="https://t.me/MRMods_Official" class="social-icon">
-                    <img src="assets/tg.png" alt="Telegram">
-                </a>
+        <!-- أيقونات تواصل اجتماعي مع تأثير الإضاءة -->
+        <div class="social-icons">
+            <!-- أيقونة تيليجرام -->
+            <a href="https://t.me/MRMods_Official" class="social-icon">
+                <img src="assets/tg.png" alt="Telegram">
+            </a>
 
-                <!-- أيقونة تويتر -->
-                <a href="https://x.com/mr_mods2?s=21" class="social-icon">
-                    <img src="assets/x.png" alt="Twitter">
-                </a>
+            <!-- أيقونة تويتر -->
+            <a href="https://x.com/mr_mods2?s=21" class="social-icon">
+                <img src="assets/x.png" alt="Twitter">
+            </a>
 
-                <!-- أيقونة يوتيوب -->
-                <a href="https://youtube.com/@mrmods-official" class="social-icon">
-                    <img src="assets/you.png" alt="YouTube">
-                </a>
+            <!-- أيقونة يوتيوب -->
+            <a href="https://youtube.com/@mrmods-official" class="social-icon">
+                <img src="assets/you.png" alt="YouTube">
+            </a>
 
-                <!-- أيقونة انستجرام -->
-                <a href="https://www.instagram.com/mohamed_ramadan502?igsh=aDhwbW1oeXZxaTVp&utm_source=qr" class="social-icon">
-                    <img src="assets/ins.png" alt="Instagram">
-                </a>
-            </div>
+            <!-- أيقونة انستجرام -->
+            <a href="https://www.instagram.com/mohamed_ramadan502?igsh=aDhwbW1oeXZxaTVp&utm_source=qr" class="social-icon">
+                <img src="assets/ins.png" alt="Instagram">
+            </a>
         </div>
     </div>
 </body>
