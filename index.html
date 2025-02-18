@@ -66,37 +66,16 @@
 
         .social-icons a {
             font-size: 40px;
-            color: white;
-            transition: color 0.3s ease;
-            animation: icon-move 2s infinite alternate; /* إضافة الحركة */
+            color: rgba(255, 255, 255, 0.6); /* الأيقونات شفافة */
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.6); /* تأثير الإضاءة الخفيف */
         }
 
-        /* حركة الأيقونات */
-        @keyframes icon-move {
-            0% {
-                transform: translateY(0) rotate(0deg);
-            }
-            50% {
-                transform: translateY(-10px) rotate(20deg); /* تتحرك الأيقونات للأعلى وتدور */
-            }
-            100% {
-                transform: translateY(0) rotate(0deg);
-            }
-        }
-
+        /* تأثير الإضاءة عند المرور على الأيقونات */
         .social-icons a:hover {
-            color: #003366;
-            animation: icon-hover 0.3s forwards; /* حركة عند المرور */
-        }
-
-        /* حركة إضافية عند المرور بالماوس */
-        @keyframes icon-hover {
-            0% {
-                transform: scale(1);
-            }
-            100% {
-                transform: scale(1.2); /* تكبير الأيقونات عند المرور */
-            }
+            color: white; /* الأيقونة تصبح واضحة عند التمرير */
+            box-shadow: 0 0 20px rgba(0, 51, 102, 1), 0 0 30px rgba(0, 51, 102, 1); /* إضاءة جميلة باللون الأزرق */
+            transform: scale(1.2); /* تكبير الأيقونة قليلاً */
         }
     </style>
     <!-- إضافة أيقونات وسائل التواصل الاجتماعي من FontAwesome -->
