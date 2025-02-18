@@ -19,13 +19,45 @@
             <a href="zbra://sources/hhttps://https://mrmods1.github.io/repo/" class="button">Add to Zebra</a>
             <a href="installer://add/repo=https://mrmods1.github.io/repo/" class="button">Add to Installer</a>
         </div>
-        <div class="links">
-            <a href="https://t.me/MRMods_Official"><img src="assets/tg.png" alt="Telegram Icon" class="icon"></a>
-            <a href="https://x.com/mr_mods2?s=21"><img src="assets/x.png" alt="Twettir Icon" class="icon"></a>
-            <a href="https://www.instagram.com/mohamed_ramadan502?igsh=aDhwbW1oeXZxaTVp&utm_source=qr"><img src="assets/ins.png" alt="instagram Icon" class="icon"></a>
-            <a href="https://youtube.com/@mrmods-official"><img src="assets/you.png" alt="YouTube Icon" class="icon"></a>
-            
-        </div>
+       
+        /* تنسيق أيقونات وسائل التواصل الاجتماعي */
+        .social-icons {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            font-size: 40px;
+            width: 50px;
+            height: 50px;
+            display: block;
+            background-size: cover;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.6); /* تأثير الإضاءة الخفيف */
+            border-radius: 50%;
+        }
+
+        /* تأثير الإضاءة عند المرور على الأيقونات */
+        .social-icons a:hover {
+            box-shadow: 0 0 20px rgba(0, 51, 102, 1), 0 0 30px rgba(0, 51, 102, 1); /* إضاءة جميلة باللون الأزرق */
+            transform: scale(1.2); /* تكبير الأيقونة قليلاً */
+        }
+
+    </style>
+</head>
+<body>
+
+
+ <!-- أيقونات وسائل التواصل الاجتماعي -->
+    <div class="social-icons">
+        <!-- تغيير روابط الصور الخاصة بالأيقونات هنا -->
+        <a href="https://www.instagram.com" target="_blank" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png');"></a>
+        <a href="https://twitter.com" target="_blank" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/60/Twitter_Logo_as_of_2021.svg');"></a>
+        <a href="https://www.youtube.com" target="_blank" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png');"></a>
+    </div>
+
     </div>
 </body>
 </html>
