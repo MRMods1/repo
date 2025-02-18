@@ -6,36 +6,42 @@
     <title>MRMODS-REPO</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <style>
-        /* تنسيق الإطار المضيء حول الفريم */
+        /* تنسيق واجهة التحميل */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            z-index: 9999;
+        }
+
+        /* تنسيق المحتوى الأصلي بعد التحقق */
         .container {
-            border: 5px solid transparent; /* الشفافية في البداية */
+            border: 5px solid transparent;
             border-radius: 20px;
             padding: 20px;
             margin: 20px;
-            background-clip: padding-box; /* لضمان أن الإطار يظهر حول الفريم */
-            animation: glowing-border 3s infinite linear; /* إضافة تأثير الإضاءة المتغير */
+            background-clip: padding-box;
+            animation: glowing-border 3s infinite linear;
         }
 
-        /* تأثير الإضاءة المتغير */
         @keyframes glowing-border {
-            0% {
-                border-color: #ff0000; /* الأحمر */
-            }
-            25% {
-                border-color: #00ff00; /* الأخضر */
-            }
-            50% {
-                border-color: #0000ff; /* الأزرق */
-            }
-            75% {
-                border-color: #ffff00; /* الأصفر */
-            }
-            100% {
-                border-color: #ff00ff; /* الوردي */
-            }
+            0% { border-color: #ff0000; }
+            25% { border-color: #00ff00; }
+            50% { border-color: #0000ff; }
+            75% { border-color: #ffff00; }
+            100% { border-color: #ff00ff; }
         }
 
-        /* تنسيق الأزرار (شفافة مع تأثير الإضاءة) */
+        /* باقي التنسيق الخاص بالصفحة يبقى كما هو */
         .button-container .button {
             padding: 10px 20px;
             margin: 10px;
@@ -51,11 +57,10 @@
         }
 
         .button-container .button:hover {
-            box-shadow: 0 0 15px 5px #00aaff; /* تأثير الإضاءة الأزرق */
-            transform: scale(1.05); /* تكبير الحجم عند المرور */
+            box-shadow: 0 0 15px 5px #00aaff;
+            transform: scale(1.05);
         }
 
-        /* تنسيق أيقونات التواصل الاجتماعي */
         .social-icons {
             display: flex;
             gap: 20px;
@@ -86,7 +91,13 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <!-- واجهة التحميل -->
+    <div id="loading-screen">
+        Checking internet connection...
+    </div>
+
+    <!-- المحتوى الفعلي للصفحة -->
+    <div class="container" style="display:none;">
         <div class="logo-container">
             <img src="assets/icon.png" alt="s8xg Logo" class="logo">
             <h1 class="title">MRMODS-REPO</h1>
@@ -101,26 +112,37 @@
 
         <!-- أيقونات تواصل اجتماعي مع تأثير الإضاءة -->
         <div class="social-icons">
-            <!-- أيقونة تيليجرام -->
             <a href="https://t.me/MRMods_Official" class="social-icon">
                 <img src="assets/tg.png" alt="Telegram">
             </a>
 
-            <!-- أيقونة تويتر -->
             <a href="https://x.com/mr_mods2?s=21" class="social-icon">
                 <img src="assets/x.png" alt="Twitter">
             </a>
 
-            <!-- أيقونة يوتيوب -->
             <a href="https://youtube.com/@mrmods-official" class="social-icon">
                 <img src="assets/you.png" alt="YouTube">
             </a>
 
-            <!-- أيقونة انستجرام -->
             <a href="https://www.instagram.com/mohamed_ramadan502?igsh=aDhwbW1oeXZxaTVp&utm_source=qr" class="social-icon">
                 <img src="assets/ins.png" alt="Instagram">
             </a>
         </div>
     </div>
+
+    <script>
+        // التحقق من الاتصال بالإنترنت
+        window.onload = function() {
+            // التحقق من الاتصال
+            if (navigator.onLine) {
+                // إذا كان الاتصال بالإنترنت متاحًا، أخفِ واجهة التحميل وأعرض المحتوى
+                document.getElementById('loading-screen').style.display = 'none';
+                document.querySelector('.container').style.display = 'block';
+            } else {
+                // إذا لم يكن هناك اتصال بالإنترنت، أظهر رسالة التحذير
+                document.getElementById('loading-screen').innerHTML = 'No internet connection detected. Please check your connection.';
+            }
+        };
+    </script>
 </body>
 </html>
