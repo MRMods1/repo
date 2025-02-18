@@ -119,6 +119,14 @@
             transform: scale(1.1);
             background-color: #00aaff;
         }
+
+        /* رسالة الترحيب */
+        .greeting-message {
+            text-align: center;
+            font-size: 24px;
+            color: #fff;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -133,6 +141,12 @@
             <img src="assets/icon.png" alt="s8xg Logo" class="logo">
             <h1 class="title">MRMODS-REPO</h1>
         </div>
+
+        <!-- رسالة الترحيب الشخصية -->
+        <div class="greeting-message" id="greeting-message">
+            <!-- الرسالة الترحيبية ستظهر هنا -->
+        </div>
+
         <div class="button-container">
             <a href="sileo://source/https://mrmods1.github.io/repo/" class="button">Add to Sileo</a>
             <a href="apt-repo://https://mrmods1.github.io/repo/" class="button">Add to Saily</a>
@@ -186,7 +200,27 @@
                 // إذا لم يكن هناك اتصال بالإنترنت، أظهر رسالة التحذير
                 document.getElementById('loading-screen').innerHTML = 'No internet connection detected. Please check your connection.';
             }
+
+            // إضافة رسالة ترحيب حسب الوقت
+            displayGreetingMessage();
         };
+
+        // دالة لإظهار رسالة الترحيب حسب الوقت
+        function displayGreetingMessage() {
+            const greetingMessageElement = document.getElementById('greeting-message');
+            const currentHour = new Date().getHours();
+            let greetingMessage = '';
+
+            if (currentHour >= 5 && currentHour < 12) {
+                greetingMessage = 'Good Morning!';
+            } else if (currentHour >= 12 && currentHour < 18) {
+                greetingMessage = 'Good Afternoon!';
+            } else {
+                greetingMessage = 'Good Evening!';
+            }
+
+            greetingMessageElement.textContent = greetingMessage;
+        }
 
         // دالة لمشاركة الرابط على منصات مختلفة
         function shareOnPlatform(platform) {
