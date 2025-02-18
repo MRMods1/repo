@@ -6,82 +6,56 @@
     <title>MRMODS-REPO</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <style>
-        /* تنسيق الإطار المضيء حول الفريم */
-        .container {
-            border: 5px solid transparent; /* الشفافية في البداية */
-            border-radius: 20px;
-            padding: 20px;
-            margin: 20px;
-            background-clip: padding-box; /* لضمان أن الإطار يظهر حول الفريم */
-            animation: glowing-border 3s infinite linear; /* إضافة تأثير الإضاءة المتغير */
-        }
-
-        /* تأثير الإضاءة المتغير */
-        @keyframes glowing-border {
-            0% {
-                border-color: #ff0000; /* الأحمر */
-            }
-            25% {
-                border-color: #00ff00; /* الأخضر */
-            }
-            50% {
-                border-color: #0000ff; /* الأزرق */
-            }
-            75% {
-                border-color: #ffff00; /* الأصفر */
-            }
-            100% {
-                border-color: #ff00ff; /* الوردي */
-            }
-        }
-
-        /* تنسيق الأزرار (شفافة مع تأثير الإضاءة) */
-        .button-container .button {
+        /* تنسيق الزر */
+        .translate-btn {
             padding: 10px 20px;
-            margin: 10px;
-            text-decoration: none;
-            border-radius: 5px;
-            background-color: transparent;
-            color: white;
             font-size: 16px;
             font-weight: bold;
-            text-align: center;
+            background-color: #333;
+            color: white;
             border: 2px solid white;
-            transition: box-shadow 0.3s ease, transform 0.3s ease;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
 
-        .button-container .button:hover {
-            box-shadow: 0 0 15px 5px #00aaff; /* تأثير الإضاءة الأزرق */
-            transform: scale(1.05); /* تكبير الحجم عند المرور */
+        /* تأثير التمرير فوق الزر */
+        .translate-btn:hover {
+            box-shadow: 0 0 15px 5px #ff00ff; /* تأثير الضوء عند التمرير */
+            transform: scale(1.05); /* تكبير الزر عند التمرير */
         }
 
-        /* تنسيق أيقونات التواصل الاجتماعي */
-        .social-icons {
-            display: flex;
-            gap: 20px;
-            margin-top: 20px;
+        /* تنسيق قائمة الاختيارات */
+        .language-dropdown {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #333;
+            border-radius: 5px;
+            display: none;
+            flex-direction: column;
+            padding: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
         }
 
-        .social-icon {
-            width: 60px;
-            height: 60px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: transparent;
-            border: 2px solid #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
+        .language-dropdown a {
+            color: white;
+            text-decoration: none;
+            margin: 5px 0;
+            transition: background-color 0.3s ease;
         }
 
-        .social-icon:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0 15px #00aaff;
+        .language-dropdown a:hover {
+            background-color: #555;
         }
 
-        .social-icon img {
-            width: 30px;
-            height: 30px;
+        /* تأثير الاهتزاز على الهاتف */
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            50% { transform: translateX(10px); }
+            75% { transform: translateX(-10px); }
+            100% { transform: translateX(0); }
         }
     </style>
 </head>
@@ -101,26 +75,56 @@
 
         <!-- أيقونات تواصل اجتماعي مع تأثير الإضاءة -->
         <div class="social-icons">
-            <!-- أيقونة تيليجرام -->
             <a href="https://t.me/MRMods_Official" class="social-icon">
                 <img src="assets/tg.png" alt="Telegram">
             </a>
-
-            <!-- أيقونة تويتر -->
             <a href="https://x.com/mr_mods2?s=21" class="social-icon">
                 <img src="assets/x.png" alt="Twitter">
             </a>
-
-            <!-- أيقونة يوتيوب -->
             <a href="https://youtube.com/@mrmods-official" class="social-icon">
                 <img src="assets/you.png" alt="YouTube">
             </a>
-
-            <!-- أيقونة انستجرام -->
             <a href="https://www.instagram.com/mohamed_ramadan502?igsh=aDhwbW1oeXZxaTVp&utm_source=qr" class="social-icon">
                 <img src="assets/ins.png" alt="Instagram">
             </a>
         </div>
+
+        <!-- زر الترجمة -->
+        <button class="translate-btn" onclick="toggleLanguageDropdown()">Translate</button>
+
+        <!-- قائمة لغات الترجمة -->
+        <div class="language-dropdown" id="languageDropdown">
+            <a href="#" onclick="changeLanguage('en')">English</a>
+            <a href="#" onclick="changeLanguage('ar')">Arabic</a>
+            <a href="#" onclick="changeLanguage('fr')">French</a>
+            <a href="#" onclick="changeLanguage('es')">Spanish</a>
+            <!-- يمكنك إضافة لغات أخرى هنا -->
+        </div>
     </div>
+
+    <script>
+        // وظيفة لعرض أو إخفاء قائمة اللغات
+        function toggleLanguageDropdown() {
+            const dropdown = document.getElementById('languageDropdown');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // وظيفة لتغيير اللغة (تخيل أنك ستستخدم API لترجمة الصفحة)
+        function changeLanguage(language) {
+            alert('Language changed to: ' + language);
+            // اهتزاز الهاتف عند اختيار لغة جديدة
+            if (navigator.vibrate) {
+                navigator.vibrate([100, 50, 100]); // اهتزاز بسيط
+            }
+
+            // يمكنك هنا إضافة منطق تغيير اللغة الفعلي
+            // مثال: تحديث الصفحة أو تغيير النصوص
+
+            // إضافة تأثير الاهتزاز على الزر بعد اختيار اللغة
+            const translateButton = document.querySelector('.translate-btn');
+            translateButton.style.animation = 'shake 0.5s';
+            setTimeout(() => translateButton.style.animation = '', 500);
+        }
+    </script>
 </body>
 </html>
