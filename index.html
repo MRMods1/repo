@@ -15,43 +15,33 @@
             overflow: hidden;
             color: white;
             font-family: 'Arial', sans-serif;
-            background: url('https://www.nasa.gov/wp-content/uploads/2025/02/30dorlarge.jpg') no-repeat center center fixed; /* خلفية المجرة */
-            background-size: cover;
-            animation: spaceAnimation 60s linear infinite; /* حركة الخلفية */
+            background: url('https://www.nasa.gov/wp-content/uploads/2025/02/30dorlarge.jpg') no-repeat center center fixed; /* إضافة صورة الخلفية */
+            background-size: cover; /* لجعل الصورة تغطي الخلفية بشكل كامل */
         }
 
-        @keyframes spaceAnimation {
-            0% {
-                background-position: 0 0;
-            }
-            100% {
-                background-position: -1000px -1000px; /* تتحرك الخلفية لتكبير تأثير الحركة */
-            }
-        }
-
-        /* تنسيق صندوق الترحيب */
         .welcome-container {
             text-align: center;
             animation: fadeIn 3s ease-in-out;
+            width: 90%; /* جعله يشغل 90% من عرض الشاشة */
+            max-width: 600px; /* الحد الأقصى للعرض 600px لضمان تناسب الصفحة على الشاشات الكبيرة والصغيرة */
         }
 
         h1 {
-            font-size: 50px;
+            font-size: 36px;
             margin-bottom: 20px;
             animation: fadeIn 2s ease-in-out;
         }
 
         .welcome-message {
-            font-size: 24px;
+            font-size: 18px;
             margin-bottom: 40px;
             animation: fadeIn 3s ease-in-out;
             animation-delay: 1s;
         }
 
-        /* تأثير الكتابة المتحركة */
         .typewriter h2 {
             display: inline-block;
-            font-size: 28px;
+            font-size: 24px;
             border-right: 4px solid #fff;
             padding-right: 5px;
             white-space: nowrap;
@@ -85,7 +75,6 @@
             font-size: 24px;
         }
 
-        /* تأثيرات الزر */
         .button {
             padding: 15px 30px;
             background-color: #ff00ff;
@@ -113,6 +102,26 @@
             }
         }
 
+        /* استعلامات الوسائط لتناسب الشاشات الصغيرة */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            .welcome-message {
+                font-size: 16px;
+            }
+
+            .typewriter h2 {
+                font-size: 20px;
+            }
+
+            .button {
+                padding: 12px 24px;
+                font-size: 16px;
+            }
+        }
+
     </style>
     <script>
         // الانتقال التلقائي إلى الصفحة الرئيسية بعد 50 ثانية
@@ -123,9 +132,10 @@
 </head>
 <body>
 
-    
+    <div class="header">
+        Welcome to MRMODS-REPO
+    </div>
 
-    <!-- محتوى الصفحة الترحيبية -->
     <div class="welcome-container">
         <h1>Welcome to MRMODS-REPO!</h1>
         <p class="welcome-message">We are glad to have you here. Please wait while we redirect you to the main page.</p>
@@ -133,7 +143,7 @@
             <h2>Enjoy exploring the amazing mods!</h2>
         </div>
         <br>
-        <a href="main.html" class="button">Enter Now</a>  <!-- زر لتوجيه المستخدم إلى الصفحة الرئيسية مباشرة -->
+        <a href="main.html" class="button">Enter Now</a>
     </div>
 
 </body>
