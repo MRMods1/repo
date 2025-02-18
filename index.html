@@ -5,19 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>صفحة بها لوجو وأزرار وأيقونات</title>
     <style>
+        /* إضافة صورة خلفية */
         body {
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-image: url('https://via.placeholder.com/1920x1080'); /* تغيير رابط الصورة إلى رابط الصورة التي تريدها */
+            background-size: cover;
+            background-position: center;
+            color: white;
         }
 
         /* تنسيق العنوان */
         h1 {
             margin-top: 20px;
             font-size: 36px;
-            color: #333;
+            color: white;
         }
 
         /* تنسيق اللوجو */
@@ -62,12 +66,37 @@
 
         .social-icons a {
             font-size: 40px;
-            color: #333;
+            color: white;
             transition: color 0.3s ease;
+            animation: icon-move 2s infinite alternate; /* إضافة الحركة */
+        }
+
+        /* حركة الأيقونات */
+        @keyframes icon-move {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-10px) rotate(20deg); /* تتحرك الأيقونات للأعلى وتدور */
+            }
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
         }
 
         .social-icons a:hover {
             color: #003366;
+            animation: icon-hover 0.3s forwards; /* حركة عند المرور */
+        }
+
+        /* حركة إضافية عند المرور بالماوس */
+        @keyframes icon-hover {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.2); /* تكبير الأيقونات عند المرور */
+            }
         }
     </style>
     <!-- إضافة أيقونات وسائل التواصل الاجتماعي من FontAwesome -->
