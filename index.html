@@ -9,13 +9,24 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            background-color: #111;
             display: flex;
             justify-content: center;
             align-items: center;
+            overflow: hidden;
             color: white;
             font-family: 'Arial', sans-serif;
-            overflow: hidden;
+            background: url('https://www.nasa.gov/sites/default/files/thumbnails/hs-2015-19-a-web.jpg') no-repeat center center fixed; /* خلفية المجرة */
+            background-size: cover;
+            animation: spaceAnimation 60s linear infinite; /* حركة الخلفية */
+        }
+
+        @keyframes spaceAnimation {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: -1000px -1000px; /* تتحرك الخلفية لتكبير تأثير الحركة */
+            }
         }
 
         /* تنسيق صندوق الترحيب */
@@ -68,7 +79,7 @@
             top: 20px;
             left: 50%;
             transform: translateX(-50%);
-            background-color: #333;
+            background-color: rgba(0, 0, 0, 0.5);
             padding: 15px 30px;
             border-radius: 5px;
             font-size: 24px;
@@ -101,6 +112,7 @@
                 opacity: 1;
             }
         }
+
     </style>
     <script>
         // الانتقال التلقائي إلى الصفحة الرئيسية بعد 50 ثانية
@@ -113,7 +125,7 @@
 
     <!-- العنوان في الأعلى -->
     <div class="header">
-        Welcome to MRMODS-REPO
+        Welcome to MRMODS-
     </div>
 
     <!-- محتوى الصفحة الترحيبية -->
