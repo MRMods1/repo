@@ -12,7 +12,6 @@
 
     <link rel="stylesheet" type="text/css" href="style.css">
     <style>
-        /* باقي التنسيق هنا */
         /* تنسيق واجهة التحميل */
         #loading-screen {
             position: fixed;
@@ -30,7 +29,7 @@
             z-index: 9999;
         }
 
-        /* باقي التنسيق */
+        /* تنسيق المحتوى الأصلي بعد التحقق */
         .container {
             border: 5px solid transparent;
             border-radius: 20px;
@@ -48,7 +47,7 @@
             100% { border-color: #ff00ff; }
         }
 
-        /* باقي التنسيق للأزرار والتفاعل */
+        /* تنسيق الأزرار */
         .button-container .button {
             padding: 10px 20px;
             margin: 10px;
@@ -68,6 +67,7 @@
             transform: scale(1.05);
         }
 
+        /* تنسيق أيقونات التواصل الاجتماعي */
         .social-icons {
             display: flex;
             gap: 20px;
@@ -84,6 +84,7 @@
             border: 2px solid #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 50%; /* جعل الحواف دائرية */
         }
 
         .social-icon:hover {
@@ -96,17 +97,13 @@
             height: 30px;
         }
 
-        body {
-            background-color: #f4f4f4;
-            color: #333;
-            font-family: Arial, sans-serif;
-        }
-
+        /* وضع الليل */
         body.night-mode {
             background-color: #333;
             color: #f4f4f4;
         }
 
+        /* رسالة الترحيب */
         .greeting-message {
             text-align: center;
             font-size: 24px;
