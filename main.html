@@ -6,41 +6,33 @@
     <title>MRMODS-REPO</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <style>
-        /* تنسيق الخلفية */
-        body {
-            background-image: url('https://www.nasa.gov/wp-content/uploads/2025/02/30dorlarge.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed; /* الخلفية ثابتة */
-            margin: 0;
-            font-family: Arial, sans-serif;
-            color: white;
-        }
-
         /* تنسيق الإطار المضيء حول الفريم */
         .container {
-            border: 5px solid transparent;
+            border: 5px solid transparent; /* الشفافية في البداية */
             border-radius: 20px;
             padding: 20px;
             margin: 20px;
-            background-clip: padding-box;
-            animation: glowing-border 3s infinite linear;
+            background-clip: padding-box; /* لضمان أن الإطار يظهر حول الفريم */
+            animation: glowing-border 3s infinite linear; /* إضافة تأثير الإضاءة المتغير */
         }
 
         /* تأثير الإضاءة المتغير */
         @keyframes glowing-border {
-            0% { border-color: #ff0000; }
-            25% { border-color: #00ff00; }
-            50% { border-color: #0000ff; }
-            75% { border-color: #ffff00; }
-            100% { border-color: #ff00ff; }
-        }
-
-        /* تنسيق العناوين والنصوص */
-        .title {
-            text-align: center;
-            font-size: 2.5em;
-            margin: 20px 0;
+            0% {
+                border-color: #ff0000; /* الأحمر */
+            }
+            25% {
+                border-color: #00ff00; /* الأخضر */
+            }
+            50% {
+                border-color: #0000ff; /* الأزرق */
+            }
+            75% {
+                border-color: #ffff00; /* الأصفر */
+            }
+            100% {
+                border-color: #ff00ff; /* الوردي */
+            }
         }
 
         /* تنسيق الأزرار (شفافة مع تأثير الإضاءة) */
@@ -59,14 +51,13 @@
         }
 
         .button-container .button:hover {
-            box-shadow: 0 0 15px 5px #00aaff;
-            transform: scale(1.05);
+            box-shadow: 0 0 15px 5px #00aaff; /* تأثير الإضاءة الأزرق */
+            transform: scale(1.05); /* تكبير الحجم عند المرور */
         }
 
         /* تنسيق أيقونات التواصل الاجتماعي */
         .social-icons {
             display: flex;
-            justify-content: center;
             gap: 20px;
             margin-top: 20px;
         }
@@ -92,41 +83,6 @@
             width: 30px;
             height: 30px;
         }
-
-        /* التصميم المتجاوب (Responsive Design) */
-        /* عندما يكون العرض أقل من 768px (الهواتف والتابلت) */
-        @media only screen and (max-width: 768px) {
-            .title {
-                font-size: 2em;
-            }
-            .container {
-                padding: 15px;
-                margin: 10px;
-            }
-            .button-container .button {
-                width: 100%;
-                padding: 15px;
-                font-size: 18px;
-            }
-            .social-icons {
-                flex-wrap: wrap;
-                justify-content: space-evenly;
-            }
-        }
-
-        /* عندما يكون العرض أقل من 480px (شاشات الهاتف الصغيرة) */
-        @media only screen and (max-width: 480px) {
-            .title {
-                font-size: 1.5em;
-            }
-            .social-icons {
-                gap: 10px;
-            }
-            .social-icon {
-                width: 50px;
-                height: 50px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -139,7 +95,7 @@
             <a href="sileo://source/https://mrmods1.github.io/repo/" class="button">Add to Sileo</a>
             <a href="apt-repo://https://mrmods1.github.io/repo/" class="button">Add to Saily</a>
             <a href="cydia://url/https://cydia.saurik.com/api/share#?source=https://mrmods1.github.io/repo/" class="button">Add to Cydia</a>
-            <a href="zbra://sources/hhttps://https://mrmods1.github.io/repo/" class="button">Add to Zebra</a>
+            <a href="zebra://sources/https://https://mrmods1.github.io/repo/" class="button">Add to Zebra</a>
             <a href="installer://add/repo=https://mrmods1.github.io/repo/" class="button">Add to Installer</a>
         </div>
 
