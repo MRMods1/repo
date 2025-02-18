@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to MRMODS-REPO</title>
+    <style>
+        /* تنسيق الصفحة */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f3f3f3;
+        }
+
+        .welcome-container {
+            text-align: center;
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 500px;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            color: #666;
+            margin-top: 20px;
+        }
+
+        .subscribe-button {
+            background-color: #FF0000;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background-color 0.3s;
+        }
+
+        .subscribe-button:hover {
+            background-color: #e60000;
+        }
+
+        /* نافذة منبثقة */
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup-content {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .popup button {
+            background-color: #FF0000;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .popup button:hover {
+            background-color: #e60000;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <h2>Please Subscribe to Our YouTube Channel</h2>
+            <p>To continue, you need to subscribe to our channel. Click the button below to go to the channel.</p>
+            <a href="https://youtube.com/@mrmods-official" target="_blank">
+                <button>Subscribe Now</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="welcome-container">
+        <h1>Welcome to MRMODS-REPO</h1>
+        <p>Thank you for visiting! To access our content, please subscribe to our YouTube channel first.</p>
+        <button class="subscribe-button" onclick="showPopup()">Subscribe Now</button>
+    </div>
+
+    <script>
+        // إخفاء الصفحة الرئيسية وإظهار نافذة الاشتراك
+        function showPopup() {
+            document.getElementById("popup").style.display = "flex";
+        }
+
+        // تم اشتراك المستخدم، انتقل إلى الصفحة الرئيسية
+        function redirectToMainPage() {
+            window.location.href = "main.html"; // قم بتحديد الرابط المناسب هنا
+        }
+    </script>
+</body>
+</html>
