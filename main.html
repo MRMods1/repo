@@ -4,8 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MRMODS-REPO</title>
+
+    <!-- إضافة صورة favicon (الصورة المصغرة في نافذة المتصفح) -->
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <!-- أو يمكنك استخدام صورة بصيغة PNG -->
+    <!-- <link rel="icon" href="assets/favicon.png" type="image/png"> -->
+
     <link rel="stylesheet" type="text/css" href="style.css">
     <style>
+        /* باقي التنسيق هنا */
         /* تنسيق واجهة التحميل */
         #loading-screen {
             position: fixed;
@@ -23,7 +30,7 @@
             z-index: 9999;
         }
 
-        /* تنسيق المحتوى الأصلي بعد التحقق */
+        /* باقي التنسيق */
         .container {
             border: 5px solid transparent;
             border-radius: 20px;
@@ -41,7 +48,7 @@
             100% { border-color: #ff00ff; }
         }
 
-        /* تنسيق الأزرار */
+        /* باقي التنسيق للأزرار والتفاعل */
         .button-container .button {
             padding: 10px 20px;
             margin: 10px;
@@ -61,7 +68,6 @@
             transform: scale(1.05);
         }
 
-        /* أيقونات التواصل الاجتماعي */
         .social-icons {
             display: flex;
             gap: 20px;
@@ -90,14 +96,12 @@
             height: 30px;
         }
 
-        /* الوضع العادي */
         body {
             background-color: #f4f4f4;
             color: #333;
             font-family: Arial, sans-serif;
         }
 
-        /* الوضع الليلي */
         body.night-mode {
             background-color: #333;
             color: #f4f4f4;
@@ -158,15 +162,11 @@
     </div>
 
     <script>
-        // التحقق من الاتصال بالإنترنت
         window.onload = function() {
-            // التحقق من الاتصال
             if (navigator.onLine) {
-                // إذا كان الاتصال بالإنترنت متاحًا، أخفِ واجهة التحميل وأعرض المحتوى
                 document.getElementById('loading-screen').style.display = 'none';
                 document.querySelector('.container').style.display = 'block';
             } else {
-                // إذا لم يكن هناك اتصال بالإنترنت، أظهر رسالة التحذير
                 document.getElementById('loading-screen').innerHTML = 'No internet connection detected. Please check your connection.';
             }
 
@@ -180,7 +180,6 @@
             }
         };
 
-        // دالة لإظهار رسالة الترحيب حسب الوقت
         function displayGreetingMessage() {
             const greetingMessageElement = document.getElementById('greeting-message');
             const currentHour = new Date().getHours();
