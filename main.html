@@ -109,24 +109,6 @@
             color: #fff;
             margin-top: 20px;
         }
-
-        /* زر التبديل بين الوضعين */
-        .toggle-button {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            padding: 10px 20px;
-            background-color: #00aaff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        .toggle-button:hover {
-            background-color: #0088cc;
-        }
     </style>
 </head>
 <body>
@@ -175,9 +157,6 @@
         </div>
     </div>
 
-    <!-- زر التبديل بين الوضعين -->
-    <button class="toggle-button" onclick="toggleNightMode()">Switch to Night Mode</button>
-
     <script>
         // التحقق من الاتصال بالإنترنت
         window.onload = function() {
@@ -198,7 +177,6 @@
             const savedMode = localStorage.getItem('theme');
             if (savedMode === 'night') {
                 document.body.classList.add('night-mode');
-                document.querySelector('.toggle-button').textContent = 'Switch to Day Mode';
             }
         };
 
@@ -217,24 +195,6 @@
             }
 
             greetingMessageElement.textContent = greetingMessage;
-        }
-
-        // دالة للتبديل بين الوضع الليلي والوضع العادي
-        function toggleNightMode() {
-            const body = document.body;
-            const button = document.querySelector('.toggle-button');
-            
-            // التبديل بين الوضعين
-            body.classList.toggle('night-mode');
-            
-            // حفظ الوضع الحالي في localStorage
-            if (body.classList.contains('night-mode')) {
-                localStorage.setItem('theme', 'night');
-                button.textContent = 'Switch to Day Mode';
-            } else {
-                localStorage.setItem('theme', 'day');
-                button.textContent = 'Switch to Night Mode';
-            }
         }
     </script>
 </body>
