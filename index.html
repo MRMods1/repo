@@ -34,10 +34,10 @@
             height: auto;
         }
 
-        /* تنسيق الأزرار المضية */
+        /* تنسيق الأزرار الشفافة مع الإضاءة */
         .glowing-button {
-            background-color: #003366; /* اللون الأزرق الغامق */
-            border: none;
+            background-color: rgba(0, 51, 102, 0.5); /* خلفية شفافة مع اللون الأزرق الغامق */
+            border: 2px solid #003366; /* تحديد اللون الأزرق الغامق */
             color: white;
             padding: 15px 32px;
             margin: 10px;
@@ -53,7 +53,7 @@
 
         .glowing-button:hover {
             box-shadow: 0 0 20px #003366, 0 0 30px #003366, 0 0 40px #003366;
-            background-color: #00509e;
+            background-color: rgba(0, 51, 102, 0.7); /* زيادة شفافية الخلفية عند التمرير */
         }
 
         /* تنسيق أيقونات وسائل التواصل الاجتماعي */
@@ -112,7 +112,7 @@
         <img src="https://via.placeholder.com/150" alt="لوجو">
     </div>
 
-    <!-- الأزرار المضية -->
+    <!-- الأزرار الشفافة مع الإضاءة -->
     <div>
         <button class="glowing-button">زر 1</button>
         <button class="glowing-button">زر 2</button>
