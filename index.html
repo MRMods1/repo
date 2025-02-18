@@ -9,41 +9,72 @@
             margin: 0;
             padding: 0;
             height: 100%;
+            background-color: #111;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #1a1a1a;
-            font-family: Arial, sans-serif;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
         }
 
+        /* تنسيق صندوق الترحيب */
         .welcome-container {
             text-align: center;
-            color: #fff;
-        }
-
-        h1 {
-            font-size: 40px;
-            margin-bottom: 20px;
             animation: fadeIn 3s ease-in-out;
         }
 
-        p {
-            font-size: 20px;
+        h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .welcome-message {
+            font-size: 24px;
             margin-bottom: 40px;
             animation: fadeIn 3s ease-in-out;
             animation-delay: 1s;
         }
 
-        /* تأثير الخط النصي في الصفحة */
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
+        /* تأثير الكتابة المتحركة */
+        .typewriter h2 {
+            display: inline-block;
+            font-size: 28px;
+            border-right: 4px solid #fff;
+            padding-right: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 4s steps(30) 1s 1 normal both, blinkCaret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
             }
-            100% {
-                opacity: 1;
+            to {
+                width: 100%;
             }
         }
 
+        @keyframes blinkCaret {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        .header {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 24px;
+        }
+
+        /* تأثيرات الزر */
         .button {
             padding: 15px 30px;
             background-color: #ff00ff;
@@ -62,33 +93,39 @@
             background-color: #ff6600;
         }
 
-        .header {
-            text-align: center;
-            padding: 20px;
-            background-color: #333;
-            color: white;
-            font-size: 24px;
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
         }
-
     </style>
     <script>
-        // الانتقال التلقائي إلى الصفحة الرئيسية بعد 5 ثواني
+        // الانتقال التلقائي إلى الصفحة الرئيسية بعد 50 ثانية
         setTimeout(function() {
-            window.location.href = "main.html";  // تم استبدال "index.html" بـ "main.html"
-        }, 5000);
+            window.location.href = "main.html";  // الانتقال إلى main.html بعد 50 ثانية
+        }, 50000); // 50 ثانية
     </script>
 </head>
 <body>
 
-    <!-- عنوان الصفحة في الأعلى -->
+    <!-- العنوان في الأعلى -->
     <div class="header">
         Welcome to MRMODS-REPO
     </div>
 
+    <!-- محتوى الصفحة الترحيبية -->
     <div class="welcome-container">
         <h1>Welcome to MRMODS-REPO!</h1>
-        <p>We are glad to have you here. You will be redirected to the main page shortly.</p>
-        <a href="main.html" class="button">Enter Now</a> <!-- تم استبدال الرابط إلى "main.html" -->
+        <p class="welcome-message">We are glad to have you here. Please wait while we redirect you to the main page.</p>
+        <div class="typewriter">
+            <h2>Enjoy exploring the amazing mods!</h2>
+        </div>
+        <br>
+        <a href="main.html" class="button">Enter Now</a>  <!-- زر لتوجيه المستخدم إلى الصفحة الرئيسية مباشرة -->
     </div>
+
 </body>
 </html>
