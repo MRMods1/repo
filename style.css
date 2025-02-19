@@ -82,9 +82,9 @@ body {
 }
 
 
-/* From Uiverse.io by barisdogansutcu */ 
+/* From Uiverse.io by barisdogansutcu */
 button {
-  padding: 17px 40px;
+  padding: 20px 40px;  /* زيادة الارتفاع بتعديل padding */
   border-radius: 50px;
   cursor: pointer;
   border: 0;
