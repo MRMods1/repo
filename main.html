@@ -7,11 +7,97 @@
 
     <!-- إضافة صورة favicon (الصورة المصغرة في نافذة المتصفح) -->
     <link rel="icon" href="assets/icon.png" type="image/icon-icon">
-    <!-- أو يمكنك استخدام صورة بصيغة PNG -->
-    <!-- <link rel="icon" href="assets/favicon.png" type="image/png"> -->
 
     <link rel="stylesheet" type="text/css" href="style.css">
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: url('assets/bg.png') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            text-align: center;
+            max-width: 300px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .logo-container {
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            width: 100px;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        .title {
+            color: #fff;
+            font-size: 1.5em;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .button-container {
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column; /* ترتيب الأزرار عموديًا */
+            align-items: center;    /* محاذاة الأزرار في المنتصف */
+            gap: 15px; /* المسافة بين الأزرار */
+            width: 100%;  /* التأكد من أن حاوية الأزرار تأخذ العرض الكامل */
+        }
+
+        .button-glow {
+            display: block;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 1px 4px 0 rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(14.5px);
+            -webkit-backdrop-filter: blur(14.5px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: #fff;
+            text-decoration: none;
+            transition: background 0.3s ease, color 0.3s ease;
+            width: 100%;  /* تأكيد أن الأزرار تأخذ العرض الكامل داخل الحاوية */
+        }
+
+        .button-glow:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .icon {
+            width: 40px;
+            height: auto;
+            margin: 0 10px;
+            transition: transform 0.2s;
+        }
+
+        .icon:hover {
+            transform: scale(1.1);
+        }
+
         /* التأثير الخاص بالأزرار */
         .button-container .button-glow {
             --glow-color: rgb(217, 176, 255);
@@ -60,105 +146,6 @@
             box-shadow: 0 0 0.6em .25em var(--glow-color),
                         0 0 2.5em 2em var(--glow-spread-color),
                         inset 0 0 .5em .25em var(--glow-color);
-        }
-
-        /* تنسيق واجهة التحميل */
-        #loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 24px;
-            font-weight: bold;
-            z-index: 9999;
-        }
-
-        /* تنسيق المحتوى الأصلي بعد التحقق */
-        .container {
-            border: 5px solid transparent;
-            border-radius: 20px;
-            padding: 20px;
-            margin: 20px;
-            background-clip: padding-box;
-            animation: glowing-border 3s infinite linear;
-        }
-
-        @keyframes glowing-border {
-            0% { border-color: #ff0000; }
-            25% { border-color: #00ff00; }
-            50% { border-color: #0000ff; }
-            75% { border-color: #ffff00; }
-            100% { border-color: #ff00ff; }
-        }
-
-        /* تنسيق الأزرار (تم تغيير الفئة إلى button-glow لتطبيق التأثير الجديد) */
-        .button-container .button {
-            padding: 10px 20px;
-            margin: 10px;
-            text-decoration: none;
-            border-radius: 5px;
-            background-color: transparent;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            text-align: center;
-            border: 2px solid white;
-            transition: box-shadow 0.3s ease, transform 0.3s ease;
-        }
-
-        .button-container .button:hover {
-            box-shadow: 0 0 15px 5px #00aaff;
-            transform: scale(1.05);
-        }
-
-        /* تنسيق أيقونات التواصل الاجتماعي */
-        .social-icons {
-            display: flex;
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .social-icon {
-            width: 60px;
-            height: 60px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: transparent;
-            border: 2px solid #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border-radius: 50%; /* جعل الحواف دائرية */
-        }
-
-        .social-icon:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0 15px #00aaff;
-        }
-
-        .social-icon img {
-            width: 30px;
-            height: 30px;
-        }
-
-        /* وضع الليل */
-        body.night-mode {
-            background-color: #333;
-            color: #f4f4f4;
-        }
-
-        /* رسالة الترحيب */
-        .greeting-message {
-            text-align: center;
-            font-size: 24px;
-            color: #fff;
-            margin-top: 20px;
         }
     </style>
 </head>
