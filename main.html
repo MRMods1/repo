@@ -33,7 +33,7 @@
             text-decoration: none; /* إزالة الخط تحت النص */
             display: inline-block;
             width: 70%;  /* تغيير العرض ليكون 70% من الفريم */
-            margin: 10px auto; /* لضمان أن الأزرار في المنتصف */
+            margin: 8px auto; /* تقليل المسافة بين الأزرار بنسبة 2% */
         }
 
         .button-container .button-glow::after {
@@ -91,6 +91,10 @@
             background-clip: padding-box;
             animation: glowing-border 3s infinite linear;
             text-align: center; /* لضمان تنسيق النصوص في الوسط */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         @keyframes glowing-border {
@@ -167,6 +171,13 @@
             font-size: 24px;
             color: #fff;
             margin-top: 20px;
+        }
+
+        /* التأكد من ظهور الأزرار على جميع الشاشات */
+        @media (min-width: 1024px) {
+            .button-container .button-glow {
+                display: block !important;
+            }
         }
     </style>
 </head>
