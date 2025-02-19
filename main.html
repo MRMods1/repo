@@ -53,18 +53,44 @@
             margin: 10px;
             text-decoration: none;
             border-radius: 5px;
-            background-color: transparent;
             color: white;
             font-size: 16px;
             font-weight: bold;
             text-align: center;
             border: 2px solid white;
+            display: inline-block;
             transition: box-shadow 0.3s ease, transform 0.3s ease;
         }
 
         .button-container .button:hover {
             box-shadow: 0 0 15px 5px #00aaff;
             transform: scale(1.05);
+        }
+
+        /* تغيير الألوان الخاصة بكل زر */
+        .button-sileo {
+            background-color: #4CAF50;
+            border-color: #4CAF50;
+        }
+
+        .button-saily {
+            background-color: #2196F3;
+            border-color: #2196F3;
+        }
+
+        .button-cydia {
+            background-color: #FF5733;
+            border-color: #FF5733;
+        }
+
+        .button-zebra {
+            background-color: #9C27B0;
+            border-color: #9C27B0;
+        }
+
+        .button-installer {
+            background-color: #FFC107;
+            border-color: #FFC107;
         }
 
         /* تنسيق أيقونات التواصل الاجتماعي */
@@ -125,18 +151,18 @@
             <h1 class="title">MRMODS-REPO</h1>
         </div>
         
-
         <!-- رسالة الترحيب الشخصية -->
         <div class="greeting-message" id="greeting-message">
             <!-- الرسالة الترحيبية ستظهر هنا -->
         </div>
 
         <div class="button-container">
-            <a href="sileo://source/https://mrmods1.github.io/repo/" class="button">Add to Sileo</a>
-            <a href="apt-repo://https://mrmods1.github.io/repo/" class="button">Add to Saily</a>
-            <a href="cydia://url/https://cydia.saurik.com/api/share#?source=https://mrmods1.github.io/repo/" class="button">Add to Cydia</a>
-            <a href="zebra://sources/https://https://mrmods1.github.io/repo/" class="button">Add to Zebra</a>
-            <a href="installer://add/repo=https://mrmods1.github.io/repo/" class="button">Add to Installer</a>
+            <!-- تعديل الأزرار مع الحفاظ على الروابط -->
+            <a href="sileo://source/https://mrmods1.github.io/repo/" class="button button-sileo">Add to Sileo</a>
+            <a href="apt-repo://https://mrmods1.github.io/repo/" class="button button-saily">Add to Saily</a>
+            <a href="cydia://url/https://cydia.saurik.com/api/share#?source=https://mrmods1.github.io/repo/" class="button button-cydia">Add to Cydia</a>
+            <a href="zebra://sources/https://mrmods1.github.io/repo/" class="button button-zebra">Add to Zebra</a>
+            <a href="installer://add/repo=https://mrmods1.github.io/repo/" class="button button-installer">Add to Installer</a>
         </div>
 
         <!-- أيقونات تواصل اجتماعي مع تأثير الإضاءة -->
