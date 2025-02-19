@@ -45,9 +45,10 @@ body {
     flex-direction: column; /* ترتيب الأزرار عموديًا */
     align-items: center;    /* محاذاة الأزرار في المنتصف */
     gap: 15px; /* المسافة بين الأزرار */
+    width: 100%;  /* التأكد من أن حاوية الأزرار تأخذ العرض الكامل */
 }
 
-.button {
+.button-glow {
     display: block;
     padding: 10px;
     background: rgba(255, 255, 255, 0.05);
@@ -59,10 +60,10 @@ body {
     color: #fff;
     text-decoration: none;
     transition: background 0.3s ease, color 0.3s ease;
-    width: 100%; /* ضمان أن الأزرار تأخذ عرض الحاوية */
+    width: 100%;  /* تأكيد أن الأزرار تأخذ العرض الكامل داخل الحاوية */
 }
 
-.button:hover {
+.button-glow:hover {
     background: rgba(255, 255, 255, 0.1);
     color: #fff;
 }
