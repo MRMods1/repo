@@ -11,6 +11,7 @@
             background-color: #f0f2f5;
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
         }
 
         /* العنوان والرأس */
@@ -95,7 +96,53 @@
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
         }
 
-        /* تذييل الموقع */
+        /* نافذة منبثقة */
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            width: 300px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .popup h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .popup p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .popup button {
+            padding: 10px 20px;
+            background-color: #1d1d1d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .popup button:hover {
+            background-color: #575757;
+        }
+
+        /* التذييل */
         footer {
             background-color: #1d1d1d;
             color: white;
@@ -138,6 +185,15 @@
     </style>
 </head>
 <body>
+
+    <!-- نافذة منبثقة ترحيبية -->
+    <div class="popup" id="welcomePopup">
+        <div class="popup-content">
+            <h2>مرحباً بك في متجر التطبيقات!</h2>
+            <p>نحن سعداء بوجودك معنا. استمتع بتصفح التطبيقات.</p>
+            <button onclick="closePopup()">إغلاق</button>
+        </div>
+    </div>
 
     <!-- الرأس -->
     <header>
@@ -200,6 +256,18 @@
     <footer>
         <p>© 2025 متجر التطبيقات. جميع الحقوق محفوظة.</p>
     </footer>
+
+    <script>
+        // وظيفة لفتح النافذة المنبثقة عند تحميل الصفحة
+        window.onload = function() {
+            document.getElementById('welcomePopup').style.display = 'flex';
+        };
+
+        // وظيفة لإغلاق النافذة المنبثقة عند النقر على زر الإغلاق
+        function closePopup() {
+            document.getElementById('welcomePopup').style.display = 'none';
+        }
+    </script>
 
 </body>
 </html>
