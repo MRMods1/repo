@@ -4,22 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>مدونة التطبيقات</title>
+    <title>متجر التطبيقات</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f2f5;
             margin: 0;
             padding: 0;
         }
 
+        /* العنوان والرأس */
         header {
-            background-color: #000;
+            background-color: #1d1d1d;
             color: white;
             text-align: center;
-            padding: 10px 0;
+            padding: 20px 0;
         }
 
+        header h1 {
+            font-size: 36px;
+        }
+
+        header p {
+            font-size: 16px;
+            color: #ccc;
+        }
+
+        /* الشريط العلوي للتنقل */
         .navbar {
             display: flex;
             justify-content: center;
@@ -30,30 +41,35 @@
         .navbar a {
             color: white;
             text-decoration: none;
-            padding: 10px 15px;
-            margin: 0 10px;
-            font-size: 16px;
+            padding: 10px 20px;
+            margin: 0 15px;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
 
         .navbar a:hover {
             background-color: #575757;
         }
 
+        /* المحتوى الرئيسي */
         .main-content {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
-            padding: 20px;
+            justify-content: center;
+            padding: 30px;
         }
 
+        /* بطاقة التطبيق */
         .app-card {
             background-color: white;
             border-radius: 10px;
             width: 250px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             margin: 15px;
             text-align: center;
             overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .app-card img {
@@ -74,24 +90,62 @@
             padding: 0 15px 15px;
         }
 
+        .app-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+        }
+
+        /* تذييل الموقع */
         footer {
-            background-color: #000;
+            background-color: #1d1d1d;
             color: white;
             text-align: center;
-            padding: 10px 0;
+            padding: 15px 0;
             position: fixed;
             width: 100%;
             bottom: 0;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+        /* تأثيرات التنقل */
+        .app-card:hover .overlay {
+            opacity: 1;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 10px;
+        }
+
+        .overlay p {
+            font-size: 18px;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
+    <!-- الرأس -->
     <header>
-        <h1>مدونة التطبيقات</h1>
-        <p>أفضل التطبيقات لك!</p>
+        <h1>متجر التطبيقات</h1>
+        <p>أفضل التطبيقات المميزة فقط</p>
     </header>
 
+    <!-- شريط التنقل -->
     <nav class="navbar">
         <a href="#">الرئيسية</a>
         <a href="#">التصنيفات</a>
@@ -99,29 +153,52 @@
         <a href="#">اتصل بنا</a>
     </nav>
 
+    <!-- المحتوى الرئيسي -->
     <section class="main-content">
-        <!-- مثال عن بطاقة تطبيق -->
+        <!-- بطاقة التطبيق 1 -->
         <div class="app-card">
             <img src="https://via.placeholder.com/250x200" alt="تطبيق 1" />
+            <div class="overlay">
+                <p>تحميل الآن</p>
+            </div>
             <h3>تطبيق 1</h3>
-            <p>وصف مختصر عن التطبيق هنا. يتيح لك هذا التطبيق القيام بمهام رائعة!</p>
-        </div>
-        
-        <div class="app-card">
-            <img src="https://via.placeholder.com/250x200" alt="تطبيق 2" />
-            <h3>تطبيق 2</h3>
-            <p>وصف مختصر عن التطبيق هنا. مع هذا التطبيق، يمكنك الاستفادة من وظائف متنوعة.</p>
+            <p>وصف مختصر للتطبيق الذي يساعدك في إتمام المهام اليومية بسرعة.</p>
         </div>
 
+        <!-- بطاقة التطبيق 2 -->
+        <div class="app-card">
+            <img src="https://via.placeholder.com/250x200" alt="تطبيق 2" />
+            <div class="overlay">
+                <p>تحميل الآن</p>
+            </div>
+            <h3>تطبيق 2</h3>
+            <p>تعلم مهارات جديدة من خلال هذا التطبيق المذهل.</p>
+        </div>
+
+        <!-- بطاقة التطبيق 3 -->
         <div class="app-card">
             <img src="https://via.placeholder.com/250x200" alt="تطبيق 3" />
+            <div class="overlay">
+                <p>تحميل الآن</p>
+            </div>
             <h3>تطبيق 3</h3>
-            <p>وصف مختصر عن التطبيق هنا. يقدم هذا التطبيق أداءً رائعًا لمستخدميه.</p>
+            <p>اكتشف أفكارًا جديدة لتحسين الإنتاجية باستخدام هذا التطبيق.</p>
+        </div>
+
+        <!-- بطاقة التطبيق 4 -->
+        <div class="app-card">
+            <img src="https://via.placeholder.com/250x200" alt="تطبيق 4" />
+            <div class="overlay">
+                <p>تحميل الآن</p>
+            </div>
+            <h3>تطبيق 4</h3>
+            <p>تطبيق لتحسين صحتك الجسدية والنفسية بشكل مستمر.</p>
         </div>
     </section>
 
+    <!-- التذييل -->
     <footer>
-        <p>© 2025 مدونة التطبيقات. جميع الحقوق محفوظة.</p>
+        <p>© 2025 متجر التطبيقات. جميع الحقوق محفوظة.</p>
     </footer>
 
 </body>
