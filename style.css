@@ -87,7 +87,7 @@ body {
 
 /* From Uiverse.io by CristianMontoya98 */ 
 .btn {
- width: 6.5em;
+ width: 10.5em;
  height: 2.3em;
  margin: 0.5em;
  background: black;
@@ -108,7 +108,7 @@ button:hover {
 
 button:after {
  content: "";
- background: white;
+ background: gold;
  position: absolute;
  z-index: -1;
  left: -20%;
