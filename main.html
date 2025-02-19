@@ -7,6 +7,8 @@
 
     <!-- إضافة صورة favicon (الصورة المصغرة في نافذة المتصفح) -->
     <link rel="icon" href="assets/icon.png" type="image/icon-icon">
+    <!-- أو يمكنك استخدام صورة بصيغة PNG -->
+    <!-- <link rel="icon" href="assets/favicon.png" type="image/png"> -->
 
     <link rel="stylesheet" type="text/css" href="style.css">
     <style>
@@ -68,7 +70,6 @@
         /* تنسيق أيقونات التواصل الاجتماعي */
         .social-icons {
             display: flex;
-            justify-content: center;
             gap: 20px;
             margin-top: 20px;
         }
@@ -83,7 +84,7 @@
             border: 2px solid #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s, box-shadow 0.3s;
-            border-radius: 50%;
+            border-radius: 50%; /* جعل الحواف دائرية */
         }
 
         .social-icon:hover {
@@ -124,6 +125,7 @@
             <h1 class="title">MRMODS-REPO</h1>
         </div>
         
+
         <!-- رسالة الترحيب الشخصية -->
         <div class="greeting-message" id="greeting-message">
             <!-- الرسالة الترحيبية ستظهر هنا -->
