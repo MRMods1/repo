@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>مدونة التطبيقات</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #000;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin: 0 10px;
+            font-size: 16px;
+        }
+
+        .navbar a:hover {
+            background-color: #575757;
+        }
+
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .app-card {
+            background-color: white;
+            border-radius: 10px;
+            width: 250px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            margin: 15px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .app-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .app-card h3 {
+            color: #333;
+            padding: 10px 0;
+            font-size: 18px;
+        }
+
+        .app-card p {
+            color: #666;
+            font-size: 14px;
+            padding: 0 15px 15px;
+        }
+
+        footer {
+            background-color: #000;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>مدونة التطبيقات</h1>
+        <p>أفضل التطبيقات لك!</p>
+    </header>
+
+    <nav class="navbar">
+        <a href="#">الرئيسية</a>
+        <a href="#">التصنيفات</a>
+        <a href="#">أفضل التطبيقات</a>
+        <a href="#">اتصل بنا</a>
+    </nav>
+
+    <section class="main-content">
+        <!-- مثال عن بطاقة تطبيق -->
+        <div class="app-card">
+            <img src="https://via.placeholder.com/250x200" alt="تطبيق 1" />
+            <h3>تطبيق 1</h3>
+            <p>وصف مختصر عن التطبيق هنا. يتيح لك هذا التطبيق القيام بمهام رائعة!</p>
+        </div>
+        
+        <div class="app-card">
+            <img src="https://via.placeholder.com/250x200" alt="تطبيق 2" />
+            <h3>تطبيق 2</h3>
+            <p>وصف مختصر عن التطبيق هنا. مع هذا التطبيق، يمكنك الاستفادة من وظائف متنوعة.</p>
+        </div>
+
+        <div class="app-card">
+            <img src="https://via.placeholder.com/250x200" alt="تطبيق 3" />
+            <h3>تطبيق 3</h3>
+            <p>وصف مختصر عن التطبيق هنا. يقدم هذا التطبيق أداءً رائعًا لمستخدميه.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 مدونة التطبيقات. جميع الحقوق محفوظة.</p>
+    </footer>
+
+</body>
+</html>
