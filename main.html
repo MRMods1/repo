@@ -8,52 +8,6 @@
     <!-- إضافة صورة favicon (الصورة المصغرة في نافذة المتصفح) -->
     <link rel="icon" href="assets/icon.png" type="image/icon-icon">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <style>
-        /* تنسيق واجهة التحميل */
-        #loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 24px;
-            font-weight: bold;
-            z-index: 9999;
-        }
-
-        /* تنسيق الأزرار */
-        .button-container .button {
-            padding: 10px 20px;
-            margin: 10px;
-            text-decoration: none;
-            border-radius: 5px;
-            background-color: transparent;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            text-align: center;
-            border: 2px solid white;
-            transition: box-shadow 0.3s ease, transform 0.3s ease;
-        }
-
-        .button-container .button:hover {
-            box-shadow: 0 0 15px 5px #00aaff;
-            transform: scale(1.05);
-        }
-
-        /* التنسيقات الأخرى */
-        .greeting-message {
-            text-align: center;
-            font-size: 24px;
-            color: #fff;
-            margin-top: 20px;
-        }
-    </style>
 </head>
 <body>
     <!-- واجهة التحميل -->
@@ -74,6 +28,7 @@
         </div>
 
         <div class="button-container">
+            <!-- الأزرار مع التأثيرات الجديدة -->
             <button onclick="window.location.href='sileo://source/https://mrmods1.github.io/repo/'" class="button">Add to Sileo</button>
             <button onclick="window.location.href='apt-repo://https://mrmods1.github.io/repo/'" class="button">Add to Saily</button>
             <button onclick="window.location.href='cydia://url/https://cydia.saurik.com/api/share#?source=https://mrmods1.github.io/repo/'" class="button">Add to Cydia</button>
