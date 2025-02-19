@@ -31,6 +31,9 @@
             position: relative;
             transition: all 0.3s;
             text-decoration: none; /* إزالة الخط تحت النص */
+            display: inline-block;
+            width: 70%;  /* تغيير العرض ليكون 70% من الفريم */
+            margin: 10px auto; /* لضمان أن الأزرار في المنتصف */
         }
 
         .button-container .button-glow::after {
@@ -87,6 +90,7 @@
             margin: 20px;
             background-clip: padding-box;
             animation: glowing-border 3s infinite linear;
+            text-align: center; /* لضمان تنسيق النصوص في الوسط */
         }
 
         @keyframes glowing-border {
@@ -101,7 +105,7 @@
         .button-container .button {
             display: block;
             padding: 10px 20px;
-            margin: 10px 0;
+            margin: 10px auto;
             text-decoration: none;
             border-radius: 10px;
             background-color: transparent;
@@ -111,7 +115,7 @@
             text-align: center;
             border: 2px solid white;
             transition: box-shadow 0.3s ease, transform 0.3s ease;
-            width: 100%;  /* التأكد من أن الأزرار تأخذ العرض الكامل داخل الحاوية */
+            width: 70%;  /* التأكد من أن الأزرار تأخذ العرض 70% */
         }
 
         .button-container .button:hover {
@@ -125,6 +129,7 @@
             display: flex;
             gap: 20px;
             margin-top: 20px;
+            justify-content: center; /* لضمان أن الأيقونات في المنتصف */
         }
 
         .social-icon {
