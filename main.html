@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MRMODS-REPO</title>
 
-    <!-- إضافة صورة favicon (الصورة المصغرة في نافذة المتصفح) -->
     <link rel="icon" href="assets/icon.png" type="image/icon-icon">
 
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -56,7 +55,7 @@
             box-shadow: 0 0 1em .25em var(--glow-color),
                         0 0 4em 2em var(--glow-spread-color),
                         inset 0 0 .75em .25em var(--glow-color);
-            text-decoration: none; /* التأكد من إزالة الخط تحت النص عند التحويم */
+            text-decoration: none; /* التأكد من إزالة الخط تحت النص أثناء التحويم */
         }
 
         .button-container .button-glow:active {
@@ -95,6 +94,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            visibility: visible; /* التأكد من أن الفريم مرئي */
         }
 
         @keyframes glowing-border {
@@ -165,14 +165,6 @@
             color: #f4f4f4;
         }
 
-        /* رسالة الترحيب */
-        .greeting-message {
-            text-align: center;
-            font-size: 24px;
-            color: #fff;
-            margin-top: 20px;
-        }
-
         /* التأكد من ظهور الأزرار على جميع الشاشات */
         @media (min-width: 1024px) {
             .button-container .button-glow {
@@ -194,11 +186,6 @@
             <h1 class="title">MRMODS-REPO</h1>
         </div>
         
-        <!-- رسالة الترحيب الشخصية -->
-        <div class="greeting-message" id="greeting-message">
-            <!-- الرسالة الترحيبية ستظهر هنا -->
-        </div>
-
         <div class="button-container">
             <a href="sileo://source/https://mrmods1.github.io/repo/" class="button-glow">Add to Sileo</a>
             <a href="apt-repo://https://mrmods1.github.io/repo/" class="button-glow">Add to Saily</a>
@@ -235,32 +222,7 @@
             } else {
                 document.getElementById('loading-screen').innerHTML = 'No internet connection detected. Please check your connection.';
             }
-
-            // إضافة رسالة ترحيب حسب الوقت
-            displayGreetingMessage();
-
-            // تطبيق الوضع المحفوظ في localStorage عند تحميل الصفحة
-            const savedMode = localStorage.getItem('theme');
-            if (savedMode === 'night') {
-                document.body.classList.add('night-mode');
-            }
         };
-
-        function displayGreetingMessage() {
-            const greetingMessageElement = document.getElementById('greeting-message');
-            const currentHour = new Date().getHours();
-            let greetingMessage = '';
-
-            if (currentHour < 12) {
-                greetingMessage = 'Good Morning!';
-            } else if (currentHour < 18) {
-                greetingMessage = 'Good Afternoon!';
-            } else {
-                greetingMessage = 'Good Evening!';
-            }
-
-            greetingMessageElement.textContent = greetingMessage;
-        }
     </script>
 </body>
 </html>
